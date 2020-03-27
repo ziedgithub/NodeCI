@@ -2,9 +2,10 @@ language: node_js
 node_js:
   - node
 dist: trusty
+os: linux
 services:
   - mongodb
-  - redis-server
+  - redis
 env:
   - NODE_ENV=ci
   - PORT=3000
@@ -18,5 +19,5 @@ install:
   - npm audit fix
 script:
   - nohup npm run start &
-  - sleep 3
+  - sleep 10
   - npm run test
