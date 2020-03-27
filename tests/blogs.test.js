@@ -11,7 +11,7 @@ afterEach(async () => {
     await page.close()
 });
 
-describe('When logged in', async () => {
+describe('When logged in', () => {
     beforeEach(async ()=> {
        await page.login();
        await page.click('a.btn-floating');
@@ -22,7 +22,7 @@ describe('When logged in', async () => {
         expect(label).toEqual('Blog Title');
     });
 
-    describe('And using invalid inputs', async () => {
+    describe('And using invalid inputs', () => {
         beforeEach(async () => {
             await page.click('form button');
         });
@@ -62,7 +62,7 @@ describe('When logged in', async () => {
     })
 });
 
-describe('When user not logged in', async () => {
+describe('When user not logged in', () => {
     test('User connot post a new blog post', async () => {
         const result = await page.post('/api/blogs',{title: 'My Title', content: 'My Content'});
         expect(result).toEqual({error: 'You must log in!'})

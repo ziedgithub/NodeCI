@@ -15,6 +15,7 @@ cache:
 install:
   - npm install
   - npm run build
+  - npm audit fix
 script:
   - nohup npm run start &
   - sleep 3
