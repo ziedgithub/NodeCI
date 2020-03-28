@@ -18,6 +18,4 @@ install:
   - npm run build
   - npm audit fix
 script:
-  - nohup npm run start &
-  - sleep 10
-  - npm run test
+  - nohup npm run start
